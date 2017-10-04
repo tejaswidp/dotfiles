@@ -73,4 +73,4 @@ set hlsearch
 set showcmd
 set foldenable
 set mouse=a
-set t_CO=256
+colorscheme flattened_dark

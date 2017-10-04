@@ -87,3 +87,21 @@ PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(g
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lock="sh ~/.lock"
 #bindkey -v
+if [ $TERM '==' "xterm" ] ; then
+    if [ -n $COLORTERM ] ; then
+        if [ $COLORTERM = "gnome-terminal" -o $COLORTERM = "xfce-terminal" ] ; then
+            TERM=xterm-256color
+        fi
+    elif [ -n "$VTE_VERSION" ] ; then
+        TERM=xterm-256color
+    fi
+fi
+alias zotero="~/Documents/software/Zotero_linux-x86_64/run-zotero.sh"
+alias firefox="~/Documents/software/firefox/firefox"
+
+function say_status() {
+if "$@" ;
+then espeak "Task Complete";
+else espeak "Task Failed";
+fi
+}
