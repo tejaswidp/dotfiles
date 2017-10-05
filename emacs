@@ -20,7 +20,7 @@
        (when (= light 1)
 	     (load-theme 'solarized-dark t)
 	     (setq light 0)
-	     (message light))
+	     (message '%s' light))
 	(when (= light 0)
 	     (load-theme 'solarized-light t)
 	      (setq light 1)))
@@ -41,7 +41,7 @@
 ;; Open web links in firefox
 
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "firefox")
+      browse-url-generic-program "firefox-esr")
 
 
 (custom-set-variables
