@@ -99,15 +99,16 @@ fi
 alias zotero="~/Documents/software/Zotero_linux-x86_64/run-zotero.sh"
 alias firefox="~/Documents/software/firefox/firefox"
 
-function say_status() {
-if "$@" ;
-then espeak "Task Complete";
-else espeak "Task Failed";
-fi
-}
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# function say_status() {
+# if "$@" ;
+# then espeak "Task Complete";
+# else espeak "Task Failed";
+# fi
+# }
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # switch caps lock and ctrl
-setxkbmap -option ctrl:swapcaps  
+setxkbmap -option ctrl:swapcaps
+alias emacscn="emacsclient -c -n"

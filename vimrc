@@ -32,6 +32,8 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
+Plugin 'supercollider/scvim'
+
 " class outline
 Plugin 'majutsushi/tagbar'
 
