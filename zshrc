@@ -112,3 +112,5 @@ alias firefox="~/Documents/software/firefox/firefox"
 # switch caps lock and ctrl
 setxkbmap -option ctrl:swapcaps
 alias emacscn="emacsclient -c -n"
+export EDITOR="emacsclient -c -n"
+export VISUAL="emacsclient -c -n"
