@@ -1,10 +1,9 @@
 # Path to go workspace
-  export GOPATH=/home/tejaswidp/go_workspace
-
+export GOPATH=/home/tejaswidp/go_workspace
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/home/tejaswidp/Android/Sdk/platform-tools/:$GOPATH:$PATH
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/tejaswidp/.oh-my-zsh
+export ZSH=/home/tejaswidp/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -53,7 +52,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git mercurial adb colored-man-pages pip)
+plugins=(git mercurial adb colored-man-pages pip )
 
 source $ZSH/oh-my-zsh.sh
 PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)$(hg_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
@@ -89,7 +88,7 @@ alias lock="sh ~/.lock"
 #bindkey -v
 if [ $TERM '==' "xterm" ] ; then
     if [ -n $COLORTERM ] ; then
-        if [ $COLORTERM = "gnome-terminal" -o $COLORTERM = "xfce-terminal" ] ; then
+        if [ "$COLORTERM" = "gnome-terminal" -o "$COLORTERM" = "xfce-terminal" ] ; then
             TERM=xterm-256color
         fi
     elif [ -n "$VTE_VERSION" ] ; then
@@ -114,3 +113,10 @@ setxkbmap -option ctrl:swapcaps
 alias emacscn="emacsclient -c -n"
 export EDITOR="emacsclient -c -n"
 export VISUAL="emacsclient -c -n"
+export ALTERNATE_EDITOR=""
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+zstyle ':completion:*:manuals'    separate-sections true
+zstyle ':completion:*:manuals.*'  insert-sections   true
+zstyle ':completion:*:man:*'      menu yes select
