@@ -1,7 +1,7 @@
 # Path to go workspace
 export GOPATH=/home/tejaswidp/go_workspace
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/home/tejaswidp/Android/Sdk/platform-tools/:$GOPATH:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/home/tejaswidp/Android/Sdk/platform-tools/:$GOPATH:$HOME/.scripts/:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=/home/tejaswidp/.oh-my-zsh
 
@@ -52,7 +52,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git mercurial adb colored-man-pages pip )
+plugins=( git mercurial adb colored-man-pages pip fasd )
 
 source $ZSH/oh-my-zsh.sh
 PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)$(hg_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
@@ -82,10 +82,7 @@ PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(g
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias lock="sh ~/.lock"
-#bindkey -v
+bindkey -v
 if [ $TERM '==' "xterm" ] ; then
     if [ -n $COLORTERM ] ; then
         if [ "$COLORTERM" = "gnome-terminal" -o "$COLORTERM" = "xfce-terminal" ] ; then
@@ -110,12 +107,21 @@ alias firefox="~/Documents/software/firefox/firefox"
 
 # switch caps lock and ctrl
 setxkbmap -option ctrl:swapcaps
+
 alias emacscn="emacsclient -c -n"
+alias tmux="tmux -u"
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
 export EDITOR="emacsclient -c -n"
 export VISUAL="emacsclient -c -n"
 export ALTERNATE_EDITOR=""
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_COMPLETION_TRIGGER=''
+bindkey '^T' fzf-completion
+bindkey '^I' $fzf_default_completion
+
+eval "$(fasd --init auto)"
 
 zstyle ':completion:*:manuals'    separate-sections true
 zstyle ':completion:*:manuals.*'  insert-sections   true
