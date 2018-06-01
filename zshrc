@@ -1,7 +1,7 @@
 # Path to go workspace
 export GOPATH=/home/tejaswidp/go_workspace
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:/home/tejaswidp/Android/Sdk/platform-tools/:$GOPATH:$HOME/.scripts/:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/home/tejaswidp/Android/Sdk/platform-tools:$GOPATH:$HOME/.scripts:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=/home/tejaswidp/.oh-my-zsh
 
