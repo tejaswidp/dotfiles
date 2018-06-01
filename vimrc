@@ -34,11 +34,11 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 
 Plugin 'supercollider/scvim'
 
-" class outline
 Plugin 'majutsushi/tagbar'
 
-"mercurial plugin
 Plugin 'phleet/vim-mercenary'
+
+Plugin 'tpope/vim-surround'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
