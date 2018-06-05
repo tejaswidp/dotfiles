@@ -75,4 +75,4 @@ set hlsearch
 set showcmd
 set foldenable
 set mouse=a
-colorscheme flattened_dark
+colorscheme elflord
