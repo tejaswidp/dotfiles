@@ -1,0 +1,18 @@
+" https://github.com/1995eaton/chromium-vim/issues/312
+set localconfig
+let configpath = '/home/tejaswidp/dotfiles/.cvimrc' 
+
+let mapleader = ","
+set noautofocus
+map <leader>b :buffer<Space>
+let searchalias g = "google"
+map <leader>d :quit<CR>
+
+unmap L H J K
+map L :tabnext<CR>
+map H :tabprevious<CR>
+map J goBack
+map K goForward
+
+map <leader>s :bookmarks javascript:function iprl5(){var d=document,z=d.createElement('scr'+'ipt'),b=d.body,l=d.location;try{if(!b)throw(0);d.title='(Saving...) '+d.title;z.setAttribute('src',l.protocol+'//www.instapaper.com/j/D0KGEstBBf1o?a=send-to-kindle&u='+encodeURIComponent(l.href)+'&t='+(new Date().getTime()));b.appendChild(z);}catch(e){alert('Please wait until the page has loaded.');}}iprl5();void(0)<CR>
+map <leader>u :undo<CR>
