@@ -10,9 +10,12 @@ c.aliases.update({ 'insta': 'jseval '+bookmarklet_insta })
 
 config.bind('H', 'tab-prev',  mode='normal')
 config.bind('K', 'back' , mode='normal')
-config.bind('J', 'forward' , mode='normal')
+
 config.bind('L', 'tab-next', mode='normal')
 
-config.bind(',v', 'spawn mpv --script ~/.config/mpv/plugins/mpris.so {url}')
+#config.bind( ',v' , 'spawn mpv {url}')
+#config.bind M hint links spawn mpv {hint-url}
+
+config.bind(',v', 'hint links spawn mpv {hint-url}')
 #send to kindle via instapaper
 config.bind(',s', 'insta')
