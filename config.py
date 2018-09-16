@@ -10,7 +10,7 @@ c.aliases.update({ 'insta': 'jseval '+bookmarklet_insta })
 
 config.bind('H', 'tab-prev',  mode='normal')
 config.bind('K', 'back' , mode='normal')
-
+config.bind('J', 'forward' , mode='normal')
 config.bind('L', 'tab-next', mode='normal')
 
 #config.bind( ',v' , 'spawn mpv {url}')
