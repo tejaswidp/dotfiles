@@ -23,12 +23,17 @@ alias spot-dl="~/Documents/play/spotify-downloader/spotdl.py -c ~/Documents/play
 
 #open last nth chrome download
 function open-dl() {
-    nth_entry="`ls -t ~/TBD/undefined/| head -n $1 | tail -1`"
+    if [[ -z "$1" ]]
+    then
+        n=1 #default entry to open is the last one
+    else
+        n=$1
+    fi
+    nth_entry="`ls -t ~/TBD/undefined/| head -n $n | tail -1`"
     echo $nth_entry
-    zathura ~/TBD/undefined/$nth_entry &
+    rifle ~/TBD/undefined/$nth_entry &
     disown
 }
-
 
 export EDITOR="emacsclient -c -n"
 export VISUAL="emacsclient -c -n"
